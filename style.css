@@ -1,0 +1,376 @@
+/* header { 
+
+	background: hsl(0, 37%, 36%);
+	display: block;
+  	width: 100%;
+ height:200px;
+  border: 10px dashed rgb(73, 5, 5);
+}
+#menu {	width:220px;
+	height:100%;
+	float:left;
+}
+#content { 
+	height:80%;
+	width:90%;
+	background: hsl(0, 0%, 100%);
+	margin: 0 auto;
+}
+
+a {
+	font-size:20pt;
+
+}
+.krug {
+
+  border-radius: 50%;
+
+}
+
+.container {
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh;
+}
+.footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+	margin-top: auto;
+} */
+
+/* Обнуление */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.navbar {
+    background-color: #4682b4;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #2e8b57;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+/* Добавляем стили для выпадающего подменю */
+.navbar ul li:hover > ul {
+    display: block;
+}
+
+.navbar ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #5a9bd5;
+    min-width: 160px;
+    z-index: 999;
+}
+
+.navbar ul li ul li {
+    display: block;
+    margin: 0;
+}
+
+.navbar ul li ul a {
+    padding: 10px;
+    display: block;
+}
+/* Стили для фонового изображения на главной */
+
+.background-image2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('n.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* чтобы контент был поверх фона */
+}
+.background-image3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('m.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* чтобы контент был поверх фона */
+	opacity: 0.2; /* можно сделать чуть прозрачным */
+}
+/* === Анимация появления текста === */
+
+
+/* === Фоновое изображение === */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('vitf.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+.background-image4 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('vitf.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+	opacity: 0.2;
+}
+/* === Затемнение фона под текстом === */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Чёрный с 50% прозрачностью */
+    z-index: -1;
+}
+
+/* === Шапка с рамкой === */
+.header {
+    background-color: #2e8b57;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === Центрирование содержимого === */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+/* === Анимация появления текста === */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+    color: #ffffff; /* Белый цвет текста */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Тень для лучшей читаемости */
+	font-style: oblique;
+}
+
+.fade-in-up:nth-child(1) {
+    font-size: 3.5rem; /* Очень большой заголовок */
+}
+
+.fade-in-up:nth-child(2) {
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Стиль окошка обратной связи === */
+.feedback-box {
+    background-color: rgba(255, 255, 255, 0.95); /* Белый фон с чуть прозрачностью */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+}
+
+.feedback-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e8b57;
+}
+
+.feedback-box label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.feedback-box input,
+.feedback-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.feedback-box textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.feedback-box button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.feedback-box button:hover {
+    background-color: #247347;
+}
+
+.logo {
+    height: 50px; 
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.content h3 {
+    margin-top: 25px;
+    color: #2e8b57;
+}
+
+.content h4 {
+    margin-top: 20px;
+    color: #4682b4;
+}
+
+.content h5 {
+    margin-top: 15px;
+    color: #333;
+}
+
+.content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.vitamin-block {
+    background-color: #f9f9f9;
+    border-left: 4px solid #2e8b57;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+.vitamin-info {
+    background-color: #f8f8f8;
+    border-left: 4px solid #2e8b57;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.vitamin-info h3 {
+    color: #2e8b57;
+    margin-bottom: 10px;
+}
+
+.vitamin-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.vitamin-info strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.content ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.table-image {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.table-image img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.feedback-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.feedback-item {
+    background-color: #f9f9f9;
+    border-left: 4px solid #2e8b57;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}

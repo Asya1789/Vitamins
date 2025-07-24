@@ -1,0 +1,24 @@
+{
+  "name": "О витаминах",
+  "short_name": "Витамины",
+  "description": "Информация о витаминах, их функциях и источниках в продуктах питания",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#2e8b57",
+  "theme_color": "#4682b4",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "logotip.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logotip.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

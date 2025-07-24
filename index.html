@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" href="logotip.png" type="image/x-icon">
+    <title>Главная</title>
+    <link rel="apple-touch-icon" href="logotip.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Фоновое изображение -->
+    <div class="background-image"></div>
+
+    <!-- Затемнение под текстом -->
+    <div class="overlay"></div>
+
+    <header class="header">
+    <img src="logotip.png" alt="Логотип" class="logo">
+    <h1>О витаминах</h1>
+</header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li class="dropdown">
+                <a href="vitamins.html">Про витамины ▼</a>
+                <ul class="submenu">
+                    <li><a href="aboutvit.html">О витаминах</a></li>
+                    <li><a href="functions.html">Функции витаминов</a></li>
+                </ul>
+            </li>
+            <li><a href="feedback.html">Обратная связь</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <main class="home-container">
+        <h2 class="fade-in-up">Добро пожаловать на сайт о витаминах!</h2>
+        <p class="fade-in-up">Здесь вы узнаете всё о полезных веществах, необходимых вашему организму.</p>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 О витаминах</p>
+    </footer>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker зарегистрирован: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('Ошибка регистрации ServiceWorker: ', error);
+        });
+    });
+  }
+</script>
+</body>
+</html>
